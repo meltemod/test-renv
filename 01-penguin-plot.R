@@ -1,5 +1,6 @@
 library(palmerpenguins)
 library(ggplot2)
+library(data.table)
 
 mass_flipper <- ggplot(data = penguins,
                        aes(x = flipper_length_mm,
@@ -23,3 +24,6 @@ mass_flipper <- ggplot(data = penguins,
         plot.caption.position = "plot")
 
 mass_flipper
+
+penguins_dt <- as.data.table(penguins)
+penguins_dt[island == "Dream"]
